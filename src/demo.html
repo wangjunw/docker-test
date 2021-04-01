@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            html,
+            body {
+                height: 100%;
+            }
+            .hello {
+                display: flex;
+                height: 100%;
+            }
+            .left {
+                width: 80%;
+                height: 100%;
+            }
+            .right {
+                width: 20%;
+                background: gray;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hello">
+            <div class="left">
+                <iframe
+                    src="https://blog.csdn.net/vivianluolita/article/details/53689745"
+                    frameborder="0"
+                    width="100%"
+                    height="100%"
+                    id="testIframe"
+                ></iframe>
+                <!-- <img src="../assets/logo.png" alt="" /> -->
+            </div>
+            <div class="right" id="dragTarget">
+                我是可拖拽区域
+                <input type="text" id="inp" value="请选中我" />
+            </div>
+        </div>
+    </body>
+    <script>
+        let iframe = document.getElementById('testIframe');
+        let targetEle = document.getElementById('dragTarget');
+        iframe.onload = function() {
+            console.log('iframe加载完成');
+            window.addEventListener('select', function() {
+                console.log('选中元素是否触发？？？？');
+            });
+        };
+
+        document.ondrop = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        };
+        targetEle.ondragover = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('拖拽划过');
+        };
+        targetEle.ondrop = function(e) {
+            console.log('拖拽完成');
+        };
+    </script>
+</html>
