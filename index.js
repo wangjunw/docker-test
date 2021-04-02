@@ -54,7 +54,7 @@ http.createServer(async (req, res) => {
         // 创建 docker 镜像
         execSync(`docker build . -t ${data.repository.name}-image:latest `, {
             stdio: 'inherit',
-            cwd: projectDirx,
+            cwd: projectDir,
         });
         // 销毁 docker 容
         execSync(
