@@ -68,6 +68,6 @@ http.createServer(async (req, res) => {
         );
         res.end('ok');
     }
-}).listen(80, () => {
+}).listen(3000, () => {
     console.log('server is ready');
 });
