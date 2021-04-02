@@ -18,7 +18,7 @@
             @dragover="dragoverHandler"
             @drop.prevent="testDrag"
         >
-            我是可拖拽区域,我是docker测试333
+            我是可拖拽区域,我是docker测试33
         </div>
     </div>
 </template>
