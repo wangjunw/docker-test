@@ -36,7 +36,7 @@ http.createServer(async (req, res) => {
         const projectDir = path.resolve(`./${data.repository.name}`);
         deleteFolderRecursive(projectDir);
         execSync(
-            `git clone https://github.com/wangjunw/${data.repository.name}.git ${projectDir}`,
+            `git clone git@github.com:wangjunw/${data.repository.name}.git ${projectDir}`,
             { stdio: 'inherit' }
         );
 
